@@ -24,4 +24,4 @@ echo $VERSION
 export BZZACCOUNT="`echo -n $KEYFILE | tail -c 40`" || true
 if [ "$BZZACCOUNT" == "" ]; then echo "Could not parse BZZACCOUNT from keyfile." && exit 1; fi
 
-exec /swarm --bzzaccount=$BZZACCOUNT --password /password --datadir $DATADIR $@ 2>&1 | awk -v name="$CONTAINER_NAME" '{print name " " $0}'
+exec /swarm --bzzaccount=$BZZACCOUNT --password /password --httpaddr 0.0.0.0 --datadir $DATADIR $@ 2>&1 | awk -v name="$CONTAINER_NAME" '{print name " " $0}'

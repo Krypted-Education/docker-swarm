@@ -1,6 +1,14 @@
-# Official Swarm Docker image
+# Swarm Docker image
 
-`Dockerfile` for `swarm` used on https://swarm-gateways.net and https://open.swarm-gateways.net
+This version of the image is used for hosting krypted swarm node.
+
+## Using this repository
+```sh
+make build #to build the dockerfile
+make start password=<<password>> #to startup the container
+```
+
+Then you can access the gateway using `http://localhost:8500`.
 
 ## Docker tags
 
